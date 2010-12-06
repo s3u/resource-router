@@ -1,4 +1,3 @@
-
 var users = [
   { name: 'tj' },
   { name: 'tim' }
@@ -41,7 +40,8 @@ function user(app) {
           'Content-Length': user.length
         });
         res.end(user);
-      } else {
+      }
+      else {
         // When true is passed, provide control
         // back to middleware, skipping route
         // match attemps
@@ -92,14 +92,13 @@ function main(app) {
 
 
 var connect = require('connect');
-var resource = require('lib/middleware/resource');
+var resource = require('resource-router');
 
 var server = connect.createServer(
-//  connect.logger({ buffer: true }),
-//  connect.cache(),
-//  connect.gzip(),
-//  resource
-);
+    connect.logger({ buffer: true }),
+    connect.cache(),
+    connect.gzip(),
+  );
 
 server.use('/users', resource(user));
 server.use(resource(main));
