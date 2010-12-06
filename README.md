@@ -61,11 +61,11 @@ an object. You can define as many methods as necessary for each resource.
 
 resource-router automatically adds support `HEAD` and `OPTIONS` methods.
 
-   GET /somepath HTTP/1.1
-   Host: localhost:3000
+    GET /somepath HTTP/1.1
+    Host: localhost:3000
 
-   204 No Content
-   Allow: GET,HEAD
+    204 No Content
+    Allow: GET,HEAD
 
 Contrast this to the default `router` in Connect.
 
