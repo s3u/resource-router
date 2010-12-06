@@ -32,6 +32,7 @@ Unlike the default `router` that is bundled in Connect, `resource-router` is 're
 To implement a resource, invoke `app.resource` with the path of the resource, and then declare method support via
 an object. You can define as many methods as necessary for each resource.
 
+
     // More methods
     function main(app) {
       app.resource('/', {
@@ -43,14 +44,28 @@ an object. You can define as many methods as necessary for each resource.
           res.end('Hello world', 'utf8');
         },
         'put' : function(req, res) {
-          // implement PUT here
-          ...
+          res.writeHead(201, {
+            'Content-Type': 'text/html',
+            'Location': 'http://localhost:3000/1'
+          });
+          res.end('Created', 'utf8');
         },
         'delete' : function(req, res) {
-          // implement DELETE here
-          ...
+          res.writeHead(200, {
+            'Content-Type': 'text/html'
+          });
+          res.end('Deleted', 'utf8');
+        }
       });
     }
+
+resource-router automatically adds support `HEAD` and `OPTIONS` methods.
+
+   GET /somepath HTTP/1.1
+   Host: localhost:3000
+
+   204 No Content
+   Allow: GET,HEAD
 
 Contrast this to the default `router` in Connect.
 
