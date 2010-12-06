@@ -77,3 +77,7 @@ Though the differences seem syntactical, there is a fundamental difference here.
 write HTTP applications is to implement various HTTP methods for each resource. That is, you must start with a
 resource and then specify what methods you want to support for that resource. Connect's `router` module takes the
 opposite (and wrong) approach. Use `resource-router` to get the right HTTP orientation.
+
+# Installation
+
+    npm install resource-router
