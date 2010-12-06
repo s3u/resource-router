@@ -97,7 +97,7 @@ var resource = require('resource-router');
 var server = connect.createServer(
     connect.logger({ buffer: true }),
     connect.cache(),
-    connect.gzip(),
+    connect.gzip()
   );
 
 server.use('/users', resource(user));
