@@ -1,6 +1,3 @@
-/**
- * Module dependencies.
- */
 
 var connect = require('connect'),
   assert = require('assert'),
@@ -127,9 +124,6 @@ module.exports = {
             res.end(user);
           }
           else {
-            // When true is passed, provide control
-            // back to middleware, skipping route
-            // match attemps
             next(true);
           }
         }
@@ -162,8 +156,6 @@ module.exports = {
     { url: '/users', method: 'GET'},
     { status: 200,
       headers: {'Content-Type': 'text/html'}});
-
-    var st= JSON.stringify(users);
 
     assert.response(server,
     { url: '/users.json', method: 'GET'},
