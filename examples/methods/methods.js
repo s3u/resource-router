@@ -6,27 +6,28 @@ function main(app) {
   app.resource('/', {
     'get' : function(req, res) {
       res.writeHead(200, {
-        'Content-Type': 'text/html',
-        'Content-Length': body.length
+        'Content-Type': 'text/html'
       });
       res.end('Hello world', 'utf8');
     },
     'put' : function(req, res) {
-      // implement PUT here
+      res.writeHead(201, {
+        'Content-Type': 'text/html',
+        'Location': 'http://localhost:3000/1'
+      });
+      res.end('Created', 'utf8');
     },
     'delete' : function(req, res) {
-      // implement DELETE here
+      res.writeHead(200, {
+        'Content-Type': 'text/html'
+      });
+      res.end('Deleted', 'utf8');
     }
   });
 }
 
-var server = connect.createServer(
-    connect.logger({ buffer: true }),
-    connect.cache(),
-    connect.gzip()
-  );
+var server = connect.createServer();
 
-server.use('/users', resource(user));
 server.use(resource(main));
 server.listen(3000);
 console.log('Connect server listening on port 3000');

@@ -1,7 +1,7 @@
 {
   "name": "resource-router",
   "description": "A connect-compatible resource-orinted router for building RESTful applications",
-  "version": "0.2.0",
+  "version": "0.3",
   "author": "Subbu Allamaraju <subbu@subbu.org> (http://www.subbu.org)",
   "dependencies": { "connect": ">= 0.3.0" },
   "keywords": ["framework", "rest", "resource", "restful"],
