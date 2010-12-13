@@ -18,7 +18,7 @@ function main(app) {
   });
 }
 
-// Fire up
+// Fire up the resource server
 var server = express.createServer();
 server.use(resource(main));
 server.listen(3000);

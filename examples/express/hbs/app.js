@@ -12,11 +12,13 @@ function main(app) {
   app.resource('/', {
     'get' : function(req, res) {
       res.render('items.hbs', {
-        title: 'Hello World',
-        items: [
-            { name: 'item1', description: 'This is item 1'},
-            { name: 'item2', description: 'This is item 2' },
-            { name: 'item3', email: 'This is item 3' }]
+        locals: {
+          title: 'Hello World',
+          items: [
+              { name: 'item1', description: 'This is item 1'},
+              { name: 'item2', description: 'This is item 2' },
+              { name: 'item3', email: 'This is item 3' }]
+        }
       });
     }
   });
